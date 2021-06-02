@@ -21,7 +21,7 @@ public class BoardController {
     @GetMapping("/")
     public String list(Model model){
         List<BoardDto> boardDtoList = boardService.getBoardList();
-        model.addAttribute("postList", boardDtoList);
+        model.addAttribute("postList", boardDtoList); //boardDtoList를 board/list.html에 전달
         return "board/list.html";
     }
 
