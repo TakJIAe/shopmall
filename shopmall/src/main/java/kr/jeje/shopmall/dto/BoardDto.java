@@ -3,7 +3,6 @@ package kr.jeje.shopmall.dto;
 import kr.jeje.shopmall.domain.entity.Board;
 import lombok.*;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
