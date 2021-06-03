@@ -10,5 +10,9 @@
         <module name="shopmall.shopmall.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shopmall.shopmall.main~1" target="11" />
+      <module name="shopmall.shopmall.test~1" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
