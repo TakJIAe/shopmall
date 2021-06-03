@@ -1,17 +1,16 @@
-<!---게시물 등록하는 페이지---->
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>게시판 - 글쓰기</title>
-    <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
+  <meta charset="UTF-8">
+  <title>게시판 - 글쓰기</title>
+  <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
 </head>
 <body>
 <header th:insert="common/header.html"></header>
 <div class="container">
   <form action="/post" method="post">
     <div class="form-group row">
-      <label for="inputTitle" class="col-sm-2 col-form-level"><strong>제목</strong></label>
+      <label for="inputTitle" class="col-sm-2 col-form-label"><strong>제목</strong></label>
       <div class="col-sm-10">
         <input type="text" name="title" class="form-control" id="inputTitle">
       </div>
@@ -19,7 +18,7 @@
     <div class="form-group row">
       <label for="inputAuthor" class="col-sm-2 col-form-label"><strong>작성자</strong></label>
       <div class="col-sm-10">
-        <input type="text" name="anthor" class="form-control" id="inputAuthor">
+        <input type="text" name="author" class="form-control" id="inputAuthor">
       </div>
     </div>
     <div class="form-group row">

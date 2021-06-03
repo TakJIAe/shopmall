@@ -28,7 +28,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-	runtimeOnly 'org.webjars:bootstrap:4.5.0'
+	runtimeOnly 'org.webjars:bootstrap:4.5.0' //부트스트랩 추가 - 쉬운 화면 구성
 }
 
 test {

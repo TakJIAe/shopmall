@@ -1,10 +1,13 @@
 package kr.jeje.shopmall.service;
 
+import kr.jeje.shopmall.domain.entity.Board;
 import kr.jeje.shopmall.domain.repository.BoardRepository;
 import kr.jeje.shopmall.dto.BoardDto;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class BoardService {
@@ -18,4 +21,42 @@ public class BoardService {
     public Long savePost(BoardDto boardDto){
         return boardRepository.save(boardDto.toEntity()).getId();
     }
+
+    @Transactional
+    public List<BoardDto> getBoardList(){
+        List<Board> boardList = boardRepository.findAll();
+        List<BoardDto> boardDtoList = new ArrayList<>();
+
+        for(Board board : boardList){
+            BoardDto boardDto = BoardDto.builder()
+                    .id(board.getId())
+                    .author(board.getAuthor())
+                    .title(board.getTitle())
+                    .content(board.getContent())
+                    .createdDate(board.getCreatedDate())
+                    .build();
+            boardDtoList.add(boardDto);
+        }
+        return boardDtoList;
+    }
+
+    @Transactional
+    public BoardDto getPost(Long id){
+        Board board = boardRepository.findById(id).get();
+
+        BoardDto boardDto = BoardDto.builder()
+                .id(board.getId())
+                .author(board.getAuthor())
+                .title(board.getTitle())
+                .content(board.getContent())
+                .createdDate(board.getCreatedDate())
+                .build();
+        return boardDto;
+    }
+
+    @Transactional
+    public void deletePost(Long id){
+        boardRepository.deleteById(id);
+    }
+
 }
