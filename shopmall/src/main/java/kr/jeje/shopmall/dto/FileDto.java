@@ -1,14 +1,11 @@
 package kr.jeje.shopmall.dto;
 
 import kr.jeje.shopmall.domain.entity.File;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.Entity;
+import lombok.*;
 
 @Getter
-@Entity
+@Setter
+@ToString
 @NoArgsConstructor
 public class FileDto {
     private long id;
